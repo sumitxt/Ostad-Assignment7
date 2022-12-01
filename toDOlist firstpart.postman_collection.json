@@ -1,0 +1,249 @@
+{
+	"info": {
+		"_postman_id": "e0ed8958-1b7b-4142-bddc-5d66842f697d",
+		"name": "toDOlist firstpart",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23278287"
+	},
+	"item": [
+		{
+			"name": "baseurl",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"firstName\":\"Captain\",\r\n    \"lastName\":\"Planet\",\r\n   \"emailAddress\":\"captain@gmail.com\",\r\n    \"mobileNumber\":\"01234567890\",\r\n    \"userName\":\"captain\",\r\n    \"passWord\":\"planet\",\r\n    \"City\":\"Dhaka\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/signup",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login empty",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/login",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\":\"captain\",\r\n    \"passWord\":\"planet\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/login",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "profile",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					},
+					{
+						"key": "username",
+						"value": "22",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{baseurl}}/profile",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateuser",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"passWord\":\"AA\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/profile/update",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"profile",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateuser wrong",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"FirstName\":\"Sumit 222Barua\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/profile/update",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"profile",
+						"update"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseurl",
+			"value": "http://localhost:7000/api/v1",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njk0ODI3MzAsImRhdGEiOnsiX2lkIjoiNjM3OTBlNTY2MGQ5NjhkYTRlNGQ2ODk2IiwiZmlyc3ROYW1lIjoiQ2FwdGFpbiIsImxhc3ROYW1lIjoiUGxhbmV0IiwiZW1haWxBZGRyZXNzIjoiY2F0YWluQGdtYWlsLmNvbSIsIm1vYmlsZU51bWJlciI6IjAxMjM0NTY3ODkwIiwiQ2l0eSI6IkRoYWthIiwidXNlck5hbWUiOiJjYXB0YWluIiwicGFzc1dvcmQiOiJwbGFuZXQifSwiaWF0IjoxNjY4ODc3OTMwfQ.fwT4v7HKjrz_U5v_tMY9_9euGhGeJ8sStVMeYAUzSQ8",
+			"type": "string"
+		}
+	]
+}
